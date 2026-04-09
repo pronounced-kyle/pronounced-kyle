@@ -156,14 +156,13 @@ async function readBlobState() {
   }
 
   try {
-    const { list, getDownloadUrl } = await getBlobSdk();
+    const { list } = await getBlobSdk();
     const { blobs } = await list({ prefix: STATE_BLOB_PATH, limit: 1 });
     if (!blobs.length) {
       return null;
     }
 
-    const downloadUrl = await getDownloadUrl(blobs[0].url);
-    const response = await fetch(downloadUrl);
+    const response = await fetch(blobs[0].url);
     if (!response.ok) {
       return null;
     }
@@ -190,7 +189,7 @@ async function writeBlobState(state) {
     updatedAt: new Date().toISOString()
   });
   await put(STATE_BLOB_PATH, JSON.stringify(normalized, null, 2), {
-    access: "private",
+    access: "public",
     addRandomSuffix: false,
     allowOverwrite: true,
     contentType: "application/json"
