@@ -134,8 +134,13 @@
       ticking = true;
       requestAnimationFrame(() => {
         const y = window.scrollY;
-        body.classList.toggle("sidebar-collapsed", y > 70);
-        if (y > lastY && y > 120) {
+        const collapsed = body.classList.contains("sidebar-collapsed");
+        if (!collapsed && y > 120) {
+          body.classList.add("sidebar-collapsed");
+        } else if (collapsed && y < 40) {
+          body.classList.remove("sidebar-collapsed");
+        }
+        if (y > lastY && y > 160) {
           body.classList.add("tabs-hidden");
         } else if (y < lastY) {
           body.classList.remove("tabs-hidden");
