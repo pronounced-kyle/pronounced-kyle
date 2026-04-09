@@ -98,7 +98,7 @@ function normalizeBookRecord(record, index = 0) {
   const coverUrl = String(base.coverUrl || "").trim();
   const coverOptions = uniqueStrings([...(Array.isArray(base.coverOptions) ? base.coverOptions : []), coverUrl]);
   const sortDate = parseInteger(base.sortDate, buildSortDate(year, completed, rowIndex));
-  const sourceKey = String(base.sourceKey || "").trim() || (source === "sheet" ? normalizeSourceKey(title, author, year) : "");
+  const sourceKey = String(base.sourceKey || "").trim() || normalizeSourceKey(title, author, year);
 
   return {
     id: String(base.id || "").trim() || `bk-${crypto.randomUUID().slice(0, 12)}`,
