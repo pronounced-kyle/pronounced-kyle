@@ -722,6 +722,12 @@ code {
   }
 }
 
+@media (max-width: 1040px) {
+  .year-divider {
+    top: 48px; /* clear the collapsed sticky sidebar */
+  }
+}
+
 @media (max-width: 520px) {
   .sidebar-inner {
     text-align: center;
