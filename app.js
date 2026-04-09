@@ -104,7 +104,7 @@
       });
     }
 
-    if (timelinePanelScrollEl && timelinePanelEl) {
+    if (!stackedMedia.matches && timelinePanelScrollEl && timelinePanelEl) {
       new window.Lenis({
         ...baseOptions,
         wrapper: timelinePanelScrollEl,
@@ -112,7 +112,7 @@
       });
     }
 
-    if (bookshelfScrollEl && bookshelfScrollContentEl) {
+    if (!stackedMedia.matches && bookshelfScrollEl && bookshelfScrollContentEl) {
       new window.Lenis({
         ...baseOptions,
         wrapper: bookshelfScrollEl,
