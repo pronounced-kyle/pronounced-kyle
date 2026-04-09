@@ -19,7 +19,7 @@
   setupTabs();
   setupResponsiveTabs();
   setupSmoothScroll();
-  setupMobileScrollBehavior();
+  setupMobileTopbar();
   loadSiteData();
   loadBookshelf();
 
@@ -122,40 +122,31 @@
     }
   }
 
-  function setupMobileScrollBehavior() {
+  function setupMobileTopbar() {
     if (!stackedMedia.matches) return;
 
-    const body = document.body;
-    let lastY = window.scrollY;
-    let ticking = false;
-
-    function onScroll() {
-      if (ticking) return;
-      ticking = true;
-      requestAnimationFrame(() => {
-        const y = window.scrollY;
-        const collapsed = body.classList.contains("sidebar-collapsed");
-        if (!collapsed && y > 120) {
-          body.classList.add("sidebar-collapsed");
-        } else if (collapsed && y < 5) {
-          body.classList.remove("sidebar-collapsed");
-        }
-        if (y > lastY && y > 160) {
-          body.classList.add("tabs-hidden");
-        } else if (y < lastY) {
-          body.classList.remove("tabs-hidden");
-        }
-        lastY = y;
-        ticking = false;
-      });
+    // Show the fixed compact topbar once the full identity header scrolls away
+    const identity = document.querySelector(".identity");
+    if (identity && "IntersectionObserver" in window) {
+      const observer = new IntersectionObserver(
+        ([entry]) => document.body.classList.toggle("topbar-visible", !entry.isIntersecting),
+        { threshold: 0 }
+      );
+      observer.observe(identity);
     }
 
-    window.addEventListener("scroll", onScroll, { passive: true });
+    // Hide tab rail on scroll-down, show on scroll-up
+    const tabRail = document.querySelector(".tab-rail");
+    if (tabRail && window.Headroom) {
+      new window.Headroom(tabRail, {
+        offset: 180,
+        tolerance: { up: 5, down: 0 }
+      }).init();
+    }
 
     stackedMedia.addEventListener("change", () => {
       if (!stackedMedia.matches) {
-        window.removeEventListener("scroll", onScroll);
-        body.classList.remove("sidebar-collapsed", "tabs-hidden");
+        document.body.classList.remove("topbar-visible");
       }
     });
   }

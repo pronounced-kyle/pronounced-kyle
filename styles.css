@@ -611,6 +611,11 @@ code {
   font-family: "SFMono-Regular", Menlo, Monaco, Consolas, monospace;
 }
 
+/* ── Mobile topbar ── */
+.mobile-topbar {
+  display: none;
+}
+
 @media (max-width: 1040px) {
   body {
     overflow: auto;
@@ -625,73 +630,10 @@ code {
     width: 100%;
   }
 
-  .sidebar {
-    position: sticky;
-    top: 0;
-    z-index: 50;
-  }
-
   .sidebar-inner {
     display: block;
     height: auto;
     padding-bottom: 28px;
-    transition: padding 260ms ease;
-  }
-
-  /* Collapsible bits */
-  .identity-note,
-  .socials {
-    max-height: 400px;
-    overflow: hidden;
-    opacity: 1;
-    transition: max-height 280ms ease, opacity 240ms ease, margin 240ms ease;
-  }
-
-  .identity-subtitle {
-    transition: font-size 240ms ease, margin 240ms ease, opacity 240ms ease;
-  }
-
-  /* Collapsed state */
-  body.sidebar-collapsed .sidebar-inner {
-    padding-top: 10px;
-    padding-bottom: 10px;
-  }
-
-  body.sidebar-collapsed .identity {
-    display: flex;
-    flex-direction: row;
-    align-items: baseline;
-    gap: 10px;
-    flex-wrap: nowrap;
-  }
-
-  body.sidebar-collapsed .identity h1 {
-    font-size: 22px;
-    white-space: nowrap;
-  }
-
-  body.sidebar-collapsed .identity-subtitle {
-    margin: 0;
-    font-size: 13px;
-    white-space: nowrap;
-  }
-
-  body.sidebar-collapsed .identity-note,
-  body.sidebar-collapsed .socials {
-    max-height: 0;
-    opacity: 0;
-    margin: 0;
-  }
-
-  /* Tab rail scroll-hide */
-  .tab-rail {
-    transition: opacity 220ms ease, transform 220ms ease;
-  }
-
-  body.tabs-hidden .tab-rail {
-    opacity: 0;
-    pointer-events: none;
-    transform: translateY(-6px);
   }
 
   .content-inner {
@@ -720,11 +662,77 @@ code {
     height: auto;
     padding-right: 0;
   }
-}
 
-@media (max-width: 1040px) {
+  /* Fixed compact topbar — fades in once full header scrolls away */
+  .mobile-topbar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    height: 48px;
+    padding: 0 20px;
+    background: linear-gradient(180deg, #0a1625 0%, #111f33 100%);
+    border-bottom: 1px solid rgba(197, 154, 70, 0.15);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 220ms ease;
+  }
+
+  body.topbar-visible .mobile-topbar {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .mobile-topbar-name {
+    color: var(--cream);
+    font-family: Bitter, serif;
+    font-size: 20px;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
+  .mobile-topbar-sep {
+    color: var(--gold-soft);
+    opacity: 0.5;
+    font-size: 14px;
+  }
+
+  .mobile-topbar-tagline {
+    color: var(--gold-soft);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  /* Tab rail: shift down when topbar is visible, hide on scroll-down via Headroom */
+  .tab-rail {
+    top: 12px;
+    transition: top 220ms ease, opacity 220ms ease, transform 220ms ease;
+  }
+
+  body.topbar-visible .tab-rail {
+    top: 56px;
+  }
+
+  .tab-rail.headroom--unpinned {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-6px);
+  }
+
+  /* Year bar: sits below tab rail */
   .year-divider {
-    top: 41px; /* flush against collapsed sticky sidebar */
+    top: 60px;
+  }
+
+  body.topbar-visible .year-divider {
+    top: 104px;
   }
 }
 
