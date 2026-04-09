@@ -207,7 +207,12 @@ a {
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  transition: color 180ms ease;
+  transition: color 180ms ease, transform 150ms ease;
+}
+
+.tab-button:not(.is-active):not(.is-locked):hover {
+  color: rgba(233, 228, 216, 0.7);
+  transform: scale(1.08);
 }
 
 .tab-button.is-active {
