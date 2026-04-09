@@ -711,20 +711,25 @@ code {
     white-space: nowrap;
   }
 
+  /* Tab rail: normal flow at top of page, scrolls away */
   .tab-rail {
-    display: none;
+    position: relative;
+    top: auto;
+    z-index: auto;
   }
 
-  #panel-bookshelf {
-    display: block;
-  }
-
+  /* Year bar: flush against fixed topbar when visible */
   .year-divider {
     top: 0;
   }
 
   body.topbar-visible .year-divider {
-    top: 52px;
+    top: 48px;
+  }
+
+  /* Remove gap before first year section */
+  .bookshelf-status {
+    margin: 0;
   }
 }
 

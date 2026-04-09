@@ -1,4 +1,7 @@
 (function () {
+  if ("scrollRestoration" in history) {
+    history.scrollRestoration = "manual";
+  }
   const statusEl = document.getElementById("bookshelf-status");
   const yearsEl = document.getElementById("bookshelf-years");
   const timelineEl = document.getElementById("timeline");
