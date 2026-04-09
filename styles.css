@@ -727,12 +727,6 @@ code {
     top: var(--tab-rail-top-with-topbar);
   }
 
-  .tab-rail.headroom--unpinned {
-    opacity: 0;
-    pointer-events: none;
-    transform: translateY(-6px);
-  }
-
   /* Year bar: flush against bottom of tab rail */
   .year-divider {
     top: calc(var(--tab-rail-top) + var(--tab-rail-height));

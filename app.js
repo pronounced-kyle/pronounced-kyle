@@ -146,12 +146,6 @@
       setOffsets();
       window.addEventListener("resize", setOffsets);
 
-      if (window.Headroom) {
-        new window.Headroom(tabRail, {
-          offset: 180,
-          tolerance: { up: 5, down: 0 }
-        }).init();
-      }
     }
 
     stackedMedia.addEventListener("change", () => {
