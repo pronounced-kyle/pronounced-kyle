@@ -724,7 +724,7 @@ code {
 
 @media (max-width: 1040px) {
   .year-divider {
-    top: 48px; /* clear the collapsed sticky sidebar */
+    top: 41px; /* flush against collapsed sticky sidebar */
   }
 }
 
