@@ -337,10 +337,10 @@ a {
 
 .year-pill {
   position: absolute;
-  padding: 2px 12px;
+  padding: 3px 16px;
   background: var(--oxblood-deep);
   color: var(--gold-soft);
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 600;
   letter-spacing: 0.16em;
   box-shadow: 0 0 0 10px var(--oxblood-deep);
