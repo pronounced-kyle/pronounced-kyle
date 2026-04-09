@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pronounced Kyle Admin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bitter:wght@500;700&family=IBM+Plex+Sans+Condensed:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./admin.css" />
+  </head>
+  <body>
+    <main class="admin-shell">
+      <section class="auth-card" id="login-card">
+        <div class="eyebrow">Pronounced Kyle Admin</div>
+        <h1>Library backend</h1>
+        <p>Log in to review sheet rows, add books manually, and edit your library.</p>
+        <form id="login-form" class="login-form">
+          <label>
+            <span>Username</span>
+            <input type="text" name="username" value="admin" autocomplete="username" />
+          </label>
+          <label>
+            <span>Password</span>
+            <input type="password" name="password" value="changeme" autocomplete="current-password" />
+          </label>
+          <button type="submit">Log in</button>
+          <div class="message" id="login-message"></div>
+        </form>
+      </section>
+
+      <section class="dashboard hidden" id="dashboard">
+        <header class="topbar">
+          <div>
+            <div class="eyebrow">Library backend</div>
+            <h1>Books control room</h1>
+          </div>
+          <div class="topbar-actions">
+            <span id="session-user" class="session-user"></span>
+            <button type="button" class="secondary-button" id="logout-button">Log out</button>
+          </div>
+        </header>
+
+        <div class="mode-switch">
+          <button class="mode-button is-active" type="button" data-mode="library">Library</button>
+          <button class="mode-button" type="button" data-mode="sheet">Sheet review</button>
+          <button class="mode-button" type="button" data-mode="timeline">Timeline</button>
+        </div>
+
+        <div class="workspace">
+          <aside class="list-panel">
+            <div class="panel-header">
+              <h2 id="list-title">Published books</h2>
+              <div class="panel-actions">
+                <button type="button" class="secondary-button" id="refresh-button">Refresh</button>
+                <button type="button" id="new-book-button">New</button>
+              </div>
+            </div>
+            <input id="search-input" class="search-input" type="search" placeholder="Search title or author" />
+            <div id="record-list" class="record-list"></div>
+          </aside>
+
+          <section class="editor-panel">
+            <div class="panel-header">
+              <h2 id="editor-title">Book editor</h2>
+              <div class="panel-actions">
+                <button type="button" class="danger-button hidden" id="delete-button">Delete</button>
+                <button type="button" id="save-button">Save</button>
+              </div>
+            </div>
+
+            <div class="preview-workspace" id="book-preview-workspace">
+              <section class="cover-panel">
+                <div class="subpanel-header">
+                  <h3>Cover preview</h3>
+                  <button type="button" class="secondary-button" id="find-covers-button">Find covers</button>
+                </div>
+                <div class="cover-stage" id="cover-stage"></div>
+                <div class="cover-controls">
+                  <button type="button" class="secondary-button" id="cover-prev-button">Prev</button>
+                  <div class="cover-status" id="cover-status">No covers loaded</div>
+                  <button type="button" class="secondary-button" id="cover-next-button">Next</button>
+                </div>
+                <div class="cover-strip" id="cover-strip"></div>
+              </section>
+
+              <section class="book-preview-panel">
+                <div class="subpanel-header">
+                  <h3>Public preview</h3>
+                </div>
+                <div class="book-preview" id="book-preview"></div>
+              </section>
+            </div>
+
+            <form id="book-form" class="book-form">
+              <div class="field-grid">
+                <label>
+                  <span>Title</span>
+                  <input type="text" name="title" />
+                </label>
+                <label>
+                  <span>Author</span>
+                  <input type="text" name="author" />
+                </label>
+                <label>
+                  <span>Year</span>
+                  <input type="text" name="year" />
+                </label>
+                <label>
+                  <span>Genre</span>
+                  <input type="text" name="genre" />
+                </label>
+                <label>
+                  <span>Rating</span>
+                  <input type="text" name="rating" />
+                </label>
+                <label>
+                  <span>Pages</span>
+                  <input type="number" name="pages" />
+                </label>
+                <label>
+                  <span>Completed</span>
+                  <input type="text" name="completed" placeholder="5-May" />
+                </label>
+                <label>
+                  <span>Sort date</span>
+                  <input type="number" name="sortDate" />
+                </label>
+              </div>
+
+              <label class="full-width">
+                <span>Amazon URL</span>
+                <input type="url" name="amazonUrl" />
+              </label>
+              <label class="full-width">
+                <span>Cover URL</span>
+                <input type="url" name="coverUrl" />
+              </label>
+
+              <div class="wysiwyg-group">
+                <div class="wysiwyg-label">Description</div>
+                <div class="toolbar" data-target="descriptionHtml">
+                  <button type="button" data-command="bold"><i class="fa-solid fa-bold"></i></button>
+                  <button type="button" data-command="italic"><i class="fa-solid fa-italic"></i></button>
+                  <button type="button" data-command="insertUnorderedList"><i class="fa-solid fa-list-ul"></i></button>
+                  <button type="button" data-command="createLink"><i class="fa-solid fa-link"></i></button>
+                </div>
+                <div class="editor" data-editor="descriptionHtml" contenteditable="true"></div>
+              </div>
+
+              <div class="wysiwyg-group">
+                <div class="wysiwyg-label">Memories</div>
+                <div class="toolbar" data-target="memoriesHtml">
+                  <button type="button" data-command="bold"><i class="fa-solid fa-bold"></i></button>
+                  <button type="button" data-command="italic"><i class="fa-solid fa-italic"></i></button>
+                  <button type="button" data-command="insertUnorderedList"><i class="fa-solid fa-list-ul"></i></button>
+                  <button type="button" data-command="createLink"><i class="fa-solid fa-link"></i></button>
+                </div>
+                <div class="editor" data-editor="memoriesHtml" contenteditable="true"></div>
+              </div>
+
+              <div class="wysiwyg-group">
+                <div class="wysiwyg-label">Favorite quote</div>
+                <div class="toolbar" data-target="favoriteQuoteHtml">
+                  <button type="button" data-command="bold"><i class="fa-solid fa-bold"></i></button>
+                  <button type="button" data-command="italic"><i class="fa-solid fa-italic"></i></button>
+                  <button type="button" data-command="insertUnorderedList"><i class="fa-solid fa-list-ul"></i></button>
+                  <button type="button" data-command="createLink"><i class="fa-solid fa-link"></i></button>
+                </div>
+                <div class="editor" data-editor="favoriteQuoteHtml" contenteditable="true"></div>
+              </div>
+
+              <div class="field-grid muted-grid">
+                <label>
+                  <span>Source</span>
+                  <input type="text" name="source" />
+                </label>
+                <label>
+                  <span>Source key</span>
+                  <input type="text" name="sourceKey" />
+                </label>
+                <label>
+                  <span>Row index</span>
+                  <input type="number" name="rowIndex" />
+                </label>
+              </div>
+
+              <input type="hidden" name="id" />
+            </form>
+
+            <section class="timeline-editor hidden" id="timeline-editor">
+              <div class="timeline-preview-panel">
+                <div class="subpanel-header">
+                  <h3>Timeline preview</h3>
+                </div>
+                <div class="timeline-preview" id="timeline-preview"></div>
+              </div>
+
+              <form id="timeline-form" class="timeline-form">
+                <div class="field-grid">
+                  <label>
+                    <span>Year</span>
+                    <input type="text" name="year" />
+                  </label>
+                  <label>
+                    <span>Date</span>
+                    <input type="text" name="date" placeholder="May 2022" />
+                  </label>
+                  <label>
+                    <span>Tone</span>
+                    <select name="tone">
+                      <option value="lore">Lore</option>
+                      <option value="media">Media</option>
+                      <option value="present">Present</option>
+                    </select>
+                  </label>
+                  <label>
+                    <span>Link Label</span>
+                    <input type="text" name="chipLabel" />
+                  </label>
+                </div>
+
+                <label class="full-width">
+                  <span>Text Before Link</span>
+                  <textarea name="text" rows="3"></textarea>
+                </label>
+
+                <label class="full-width">
+                  <span>Link URL</span>
+                  <input type="url" name="chipHref" />
+                </label>
+
+                <label class="full-width">
+                  <span>Text After Link</span>
+                  <textarea name="suffix" rows="3"></textarea>
+                </label>
+
+                <input type="hidden" name="id" />
+                <input type="hidden" name="chipColor" />
+              </form>
+            </section>
+
+            <div class="message" id="editor-message"></div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <script src="./admin.js"></script>
+  </body>
+</html>

@@ -1,0 +1,15 @@
+{
+  "name": "pronounced-kyle",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "vercel dev",
+    "check": "node --check api/_lib/http.js && node --check api/_lib/auth.js && node --check api/_lib/utils.js && node --check api/_lib/seed.js && node --check api/_lib/store.js && node --check api/books.js && node --check api/site-data.js && node --check api/me.js && node --check api/login.js && node --check api/logout.js && node --check api/admin/books/index.js && node --check api/admin/books/[id].js && node --check api/admin/sheet-preview.js && node --check api/admin/cover-options.js && node --check api/admin/timeline/index.js && node --check api/admin/timeline/[id].js"
+  },
+  "dependencies": {
+    "@vercel/blob": "^0.27.0"
+  }
+}
