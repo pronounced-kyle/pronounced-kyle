@@ -289,11 +289,11 @@
           <div class="review-title">${escapeHtml(book.title)}</div>
           <div class="review-author">${escapeHtml(book.author)}</div>
           <div class="review-summary">tl;dr: ${escapeHtml(book.description)}</div>
-          <ul class="review-list">
-            <li>Rating: ${escapeHtml(book.rating)}/100</li>
-            <li>Genre: ${escapeHtml(book.genre)}</li>
-            <li>Pages: ${escapeHtml(book.pages || "-")}</li>
-          </ul>
+          <table class="review-meta">
+            <tr><td class="review-meta-label">Rating</td><td class="review-meta-value">${escapeHtml(book.rating)}/100</td></tr>
+            <tr><td class="review-meta-label">Genre</td><td class="review-meta-value">${escapeHtml(book.genre)}</td></tr>
+            <tr><td class="review-meta-label">Pages</td><td class="review-meta-value">${escapeHtml(book.pages || "—")}</td></tr>
+          </table>
         </div>
       </article>
     `;
