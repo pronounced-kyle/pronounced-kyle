@@ -156,13 +156,19 @@ async function readBlobState() {
   }
 
   try {
-    const { get } = await getBlobSdk();
-    const blob = await get(STATE_BLOB_PATH, { access: "private" });
-    if (!blob) {
+    const { list, getDownloadUrl } = await getBlobSdk();
+    const { blobs } = await list({ prefix: STATE_BLOB_PATH, limit: 1 });
+    if (!blobs.length) {
       return null;
     }
 
-    const text = await new Response(blob.stream).text();
+    const downloadUrl = await getDownloadUrl(blobs[0].url);
+    const response = await fetch(downloadUrl);
+    if (!response.ok) {
+      return null;
+    }
+
+    const text = await response.text();
     if (!String(text || "").trim()) {
       return null;
     }
