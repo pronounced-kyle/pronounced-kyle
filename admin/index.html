@@ -21,17 +21,37 @@
   <body>
     <main class="admin-shell">
       <section class="auth-card" id="login-card">
-        <div class="eyebrow">Pronounced Kyle Admin</div>
-        <h1>Library backend</h1>
-        <p>Log in to review sheet rows, add books manually, and edit your library.</p>
+        <div class="auth-copy">
+          <div class="eyebrow">Pronounced Kyle Admin</div>
+          <h1>Editorial control room</h1>
+          <p>Review sheet imports, refine covers, and keep the bookshelf and timeline polished without touching code.</p>
+          <div class="auth-features">
+            <div class="auth-feature">
+              <strong>Books</strong>
+              <span>Edit display copy, metadata, and cover selection.</span>
+            </div>
+            <div class="auth-feature">
+              <strong>Sheet review</strong>
+              <span>Refresh from Google Sheets, preview candidates, then approve manually.</span>
+            </div>
+            <div class="auth-feature">
+              <strong>Timeline</strong>
+              <span>Maintain lore and media entries in the same place.</span>
+            </div>
+          </div>
+        </div>
         <form id="login-form" class="login-form">
+          <div class="form-card-head">
+            <div class="eyebrow">Sign in</div>
+            <h2>Open the backend</h2>
+          </div>
           <label>
             <span>Username</span>
-            <input type="text" name="username" value="admin" autocomplete="username" />
+            <input type="text" name="username" autocomplete="username" />
           </label>
           <label>
             <span>Password</span>
-            <input type="password" name="password" value="changeme" autocomplete="current-password" />
+            <input type="password" name="password" autocomplete="current-password" />
           </label>
           <button type="submit">Log in</button>
           <div class="message" id="login-message"></div>
@@ -40,9 +60,24 @@
 
       <section class="dashboard hidden" id="dashboard">
         <header class="topbar">
-          <div>
+          <div class="topbar-copy">
             <div class="eyebrow">Library backend</div>
             <h1>Books control room</h1>
+            <p class="topbar-note" id="mode-note">Manage the live library records and presentation details.</p>
+          </div>
+          <div class="topbar-stats">
+            <div class="topbar-stat">
+              <span class="topbar-stat-label">Mode</span>
+              <strong id="mode-label">Library</strong>
+            </div>
+            <div class="topbar-stat">
+              <span class="topbar-stat-label">Visible</span>
+              <strong id="record-count">0 items</strong>
+            </div>
+            <div class="topbar-stat topbar-stat--wide">
+              <span class="topbar-stat-label">Selected</span>
+              <strong id="selection-summary">Nothing selected</strong>
+            </div>
           </div>
           <div class="topbar-actions">
             <span id="session-user" class="session-user"></span>
@@ -50,28 +85,40 @@
           </div>
         </header>
 
-        <div class="mode-switch">
-          <button class="mode-button is-active" type="button" data-mode="library">Library</button>
-          <button class="mode-button" type="button" data-mode="sheet">Sheet review</button>
-          <button class="mode-button" type="button" data-mode="timeline">Timeline</button>
+        <div class="mode-switch-wrap">
+          <div class="mode-switch">
+            <button class="mode-button is-active" type="button" data-mode="library">Library</button>
+            <button class="mode-button" type="button" data-mode="sheet">Sheet review</button>
+            <button class="mode-button" type="button" data-mode="timeline">Timeline</button>
+          </div>
         </div>
 
         <div class="workspace">
           <aside class="list-panel">
             <div class="panel-header">
-              <h2 id="list-title">Published books</h2>
+              <div>
+                <div class="panel-kicker">Records</div>
+                <h2 id="list-title">Published books</h2>
+              </div>
               <div class="panel-actions">
                 <button type="button" class="secondary-button" id="refresh-button">Refresh</button>
                 <button type="button" id="new-book-button">New</button>
               </div>
             </div>
-            <input id="search-input" class="search-input" type="search" placeholder="Search title or author" />
+            <div class="search-wrap">
+              <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+              <input id="search-input" class="search-input" type="search" placeholder="Search title, author, year, or timeline copy" />
+            </div>
             <div id="record-list" class="record-list"></div>
           </aside>
 
           <section class="editor-panel">
             <div class="panel-header">
-              <h2 id="editor-title">Book editor</h2>
+              <div>
+                <div class="panel-kicker">Editor</div>
+                <h2 id="editor-title">Book editor</h2>
+                <p class="panel-note" id="editor-note">Edit the public-facing details, then save to publish changes.</p>
+              </div>
               <div class="panel-actions">
                 <button type="button" class="danger-button hidden" id="delete-button">Delete</button>
                 <button type="button" id="save-button">Save</button>
@@ -102,97 +149,124 @@
             </div>
 
             <form id="book-form" class="book-form">
-              <div class="field-grid">
-                <label>
-                  <span>Title</span>
-                  <input type="text" name="title" />
-                </label>
-                <label>
-                  <span>Author</span>
-                  <input type="text" name="author" />
-                </label>
-                <label>
-                  <span>Year</span>
-                  <input type="text" name="year" />
-                </label>
-                <label>
-                  <span>Genre</span>
-                  <input type="text" name="genre" />
-                </label>
-                <label>
-                  <span>Rating</span>
-                  <input type="text" name="rating" />
-                </label>
-                <label>
-                  <span>Pages</span>
-                  <input type="number" name="pages" />
-                </label>
-                <label>
-                  <span>Completed</span>
-                  <input type="text" name="completed" placeholder="5-May" />
-                </label>
-                <label>
-                  <span>Sort date</span>
-                  <input type="number" name="sortDate" />
-                </label>
-              </div>
-
-              <label class="full-width">
-                <span>Amazon URL</span>
-                <input type="url" name="amazonUrl" />
-              </label>
-              <label class="full-width">
-                <span>Cover URL</span>
-                <input type="url" name="coverUrl" />
-              </label>
-
-              <div class="wysiwyg-group">
-                <div class="wysiwyg-label">Description</div>
-                <div class="toolbar" data-target="descriptionHtml">
-                  <button type="button" data-command="bold"><i class="fa-solid fa-bold"></i></button>
-                  <button type="button" data-command="italic"><i class="fa-solid fa-italic"></i></button>
-                  <button type="button" data-command="insertUnorderedList"><i class="fa-solid fa-list-ul"></i></button>
-                  <button type="button" data-command="createLink"><i class="fa-solid fa-link"></i></button>
+              <section class="form-section">
+                <div class="form-section-header">
+                  <h3>Core details</h3>
+                  <p>The metadata that shapes how the book appears on the public site.</p>
                 </div>
-                <div class="editor" data-editor="descriptionHtml" contenteditable="true"></div>
-              </div>
-
-              <div class="wysiwyg-group">
-                <div class="wysiwyg-label">Memories</div>
-                <div class="toolbar" data-target="memoriesHtml">
-                  <button type="button" data-command="bold"><i class="fa-solid fa-bold"></i></button>
-                  <button type="button" data-command="italic"><i class="fa-solid fa-italic"></i></button>
-                  <button type="button" data-command="insertUnorderedList"><i class="fa-solid fa-list-ul"></i></button>
-                  <button type="button" data-command="createLink"><i class="fa-solid fa-link"></i></button>
+                <div class="field-grid">
+                  <label>
+                    <span>Title</span>
+                    <input type="text" name="title" />
+                  </label>
+                  <label>
+                    <span>Author</span>
+                    <input type="text" name="author" />
+                  </label>
+                  <label>
+                    <span>Year</span>
+                    <input type="text" name="year" />
+                  </label>
+                  <label>
+                    <span>Genre</span>
+                    <input type="text" name="genre" />
+                  </label>
+                  <label>
+                    <span>Rating</span>
+                    <input type="text" name="rating" />
+                  </label>
+                  <label>
+                    <span>Pages</span>
+                    <input type="number" name="pages" />
+                  </label>
+                  <label>
+                    <span>Completed</span>
+                    <input type="text" name="completed" placeholder="5-May" />
+                  </label>
+                  <label>
+                    <span>Sort date</span>
+                    <input type="number" name="sortDate" />
+                  </label>
                 </div>
-                <div class="editor" data-editor="memoriesHtml" contenteditable="true"></div>
-              </div>
+              </section>
 
-              <div class="wysiwyg-group">
-                <div class="wysiwyg-label">Favorite quote</div>
-                <div class="toolbar" data-target="favoriteQuoteHtml">
-                  <button type="button" data-command="bold"><i class="fa-solid fa-bold"></i></button>
-                  <button type="button" data-command="italic"><i class="fa-solid fa-italic"></i></button>
-                  <button type="button" data-command="insertUnorderedList"><i class="fa-solid fa-list-ul"></i></button>
-                  <button type="button" data-command="createLink"><i class="fa-solid fa-link"></i></button>
+              <section class="form-section">
+                <div class="form-section-header">
+                  <h3>Assets</h3>
+                  <p>Direct links and visual assets used by the bookshelf card.</p>
                 </div>
-                <div class="editor" data-editor="favoriteQuoteHtml" contenteditable="true"></div>
-              </div>
+                <div class="field-grid field-grid--wide">
+                  <label class="full-width">
+                    <span>Amazon URL</span>
+                    <input type="url" name="amazonUrl" />
+                  </label>
+                  <label class="full-width">
+                    <span>Cover URL</span>
+                    <input type="url" name="coverUrl" />
+                  </label>
+                </div>
+              </section>
 
-              <div class="field-grid muted-grid">
-                <label>
-                  <span>Source</span>
-                  <input type="text" name="source" />
-                </label>
-                <label>
-                  <span>Source key</span>
-                  <input type="text" name="sourceKey" />
-                </label>
-                <label>
-                  <span>Row index</span>
-                  <input type="number" name="rowIndex" />
-                </label>
-              </div>
+              <section class="form-section">
+                <div class="form-section-header">
+                  <h3>Editorial copy</h3>
+                  <p>Write the book summary and richer notes exactly as you want them stored.</p>
+                </div>
+
+                <div class="wysiwyg-group">
+                  <div class="wysiwyg-label">Description</div>
+                  <div class="toolbar" data-target="descriptionHtml">
+                    <button type="button" data-command="bold"><i class="fa-solid fa-bold"></i></button>
+                    <button type="button" data-command="italic"><i class="fa-solid fa-italic"></i></button>
+                    <button type="button" data-command="insertUnorderedList"><i class="fa-solid fa-list-ul"></i></button>
+                    <button type="button" data-command="createLink"><i class="fa-solid fa-link"></i></button>
+                  </div>
+                  <div class="editor" data-editor="descriptionHtml" contenteditable="true"></div>
+                </div>
+
+                <div class="wysiwyg-group">
+                  <div class="wysiwyg-label">Memories</div>
+                  <div class="toolbar" data-target="memoriesHtml">
+                    <button type="button" data-command="bold"><i class="fa-solid fa-bold"></i></button>
+                    <button type="button" data-command="italic"><i class="fa-solid fa-italic"></i></button>
+                    <button type="button" data-command="insertUnorderedList"><i class="fa-solid fa-list-ul"></i></button>
+                    <button type="button" data-command="createLink"><i class="fa-solid fa-link"></i></button>
+                  </div>
+                  <div class="editor" data-editor="memoriesHtml" contenteditable="true"></div>
+                </div>
+
+                <div class="wysiwyg-group">
+                  <div class="wysiwyg-label">Favorite quote</div>
+                  <div class="toolbar" data-target="favoriteQuoteHtml">
+                    <button type="button" data-command="bold"><i class="fa-solid fa-bold"></i></button>
+                    <button type="button" data-command="italic"><i class="fa-solid fa-italic"></i></button>
+                    <button type="button" data-command="insertUnorderedList"><i class="fa-solid fa-list-ul"></i></button>
+                    <button type="button" data-command="createLink"><i class="fa-solid fa-link"></i></button>
+                  </div>
+                  <div class="editor" data-editor="favoriteQuoteHtml" contenteditable="true"></div>
+                </div>
+              </section>
+
+              <section class="form-section form-section--muted">
+                <div class="form-section-header">
+                  <h3>Backend fields</h3>
+                  <p>Import/source details used for sync and ordering.</p>
+                </div>
+                <div class="field-grid muted-grid">
+                  <label>
+                    <span>Source</span>
+                    <input type="text" name="source" />
+                  </label>
+                  <label>
+                    <span>Source key</span>
+                    <input type="text" name="sourceKey" />
+                  </label>
+                  <label>
+                    <span>Row index</span>
+                    <input type="number" name="rowIndex" />
+                  </label>
+                </div>
+              </section>
 
               <input type="hidden" name="id" />
             </form>
@@ -206,43 +280,55 @@
               </div>
 
               <form id="timeline-form" class="timeline-form">
-                <div class="field-grid">
-                  <label>
-                    <span>Year</span>
-                    <input type="text" name="year" />
-                  </label>
-                  <label>
-                    <span>Date</span>
-                    <input type="text" name="date" placeholder="May 2022" />
-                  </label>
-                  <label>
-                    <span>Tone</span>
-                    <select name="tone">
-                      <option value="lore">Lore</option>
-                      <option value="media">Media</option>
-                      <option value="present">Present</option>
-                    </select>
-                  </label>
-                  <label>
-                    <span>Link Label</span>
-                    <input type="text" name="chipLabel" />
-                  </label>
-                </div>
+                <section class="form-section">
+                  <div class="form-section-header">
+                    <h3>Entry setup</h3>
+                    <p>Choose the year, date label, tone, and optional inline link.</p>
+                  </div>
+                  <div class="field-grid">
+                    <label>
+                      <span>Year</span>
+                      <input type="text" name="year" />
+                    </label>
+                    <label>
+                      <span>Date</span>
+                      <input type="text" name="date" placeholder="May 2022" />
+                    </label>
+                    <label>
+                      <span>Tone</span>
+                      <select name="tone">
+                        <option value="lore">Lore</option>
+                        <option value="media">Media</option>
+                        <option value="present">Present</option>
+                      </select>
+                    </label>
+                    <label>
+                      <span>Link label</span>
+                      <input type="text" name="chipLabel" />
+                    </label>
+                  </div>
+                </section>
 
-                <label class="full-width">
-                  <span>Text Before Link</span>
-                  <textarea name="text" rows="3"></textarea>
-                </label>
+                <section class="form-section">
+                  <div class="form-section-header">
+                    <h3>Copy</h3>
+                    <p>Split the sentence around the link so the rendered timeline reads exactly right.</p>
+                  </div>
+                  <label class="full-width">
+                    <span>Text before link</span>
+                    <textarea name="text" rows="3"></textarea>
+                  </label>
 
-                <label class="full-width">
-                  <span>Link URL</span>
-                  <input type="url" name="chipHref" />
-                </label>
+                  <label class="full-width">
+                    <span>Link URL</span>
+                    <input type="url" name="chipHref" />
+                  </label>
 
-                <label class="full-width">
-                  <span>Text After Link</span>
-                  <textarea name="suffix" rows="3"></textarea>
-                </label>
+                  <label class="full-width">
+                    <span>Text after link</span>
+                    <textarea name="suffix" rows="3"></textarea>
+                  </label>
+                </section>
 
                 <input type="hidden" name="id" />
                 <input type="hidden" name="chipColor" />

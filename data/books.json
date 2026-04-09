@@ -155,7 +155,7 @@
     "pages": "86",
     "completed": "16-Jul",
     "amazonUrl": "https://www.amazon.com/s?k=Alice%27s+Adventures+in+Wonderland+Lewis+Carroll",
-    "coverUrl": "",
+    "coverUrl": "https://covers.openlibrary.org/b/id/10527843-L.jpg",
     "sortDate": 20140716,
     "rowIndex": 9
   },
@@ -187,7 +187,7 @@
     "pages": "85",
     "completed": "4-Aug",
     "amazonUrl": "https://www.amazon.com/s?k=The+Elements+of+Style+E.B.+White",
-    "coverUrl": "",
+    "coverUrl": "https://covers.openlibrary.org/b/id/10515358-L.jpg",
     "sortDate": 20140804,
     "rowIndex": 11
   },
@@ -235,7 +235,7 @@
     "pages": "222",
     "completed": "14-Sep",
     "amazonUrl": "https://www.amazon.com/s?k=Fully+Present+Smalley+%26+Winston",
-    "coverUrl": "",
+    "coverUrl": "https://covers.openlibrary.org/b/id/13862195-L.jpg",
     "sortDate": 20140914,
     "rowIndex": 14
   },
@@ -379,7 +379,7 @@
     "pages": "282",
     "completed": "26-Dec",
     "amazonUrl": "https://www.amazon.com/s?k=An+Astronaut%27s+Guide+to+Life+on+Earth+Col.+Chris+Hadfield",
-    "coverUrl": "",
+    "coverUrl": "https://covers.openlibrary.org/b/id/7459498-L.jpg",
     "sortDate": 20141226,
     "rowIndex": 23
   },
@@ -523,7 +523,7 @@
     "pages": "211",
     "completed": "19-Apr",
     "amazonUrl": "https://www.amazon.com/s?k=Think+Like+a+Freak+Levitt+%26+Dubner",
-    "coverUrl": "",
+    "coverUrl": "https://covers.openlibrary.org/b/id/10309170-L.jpg",
     "sortDate": 20150419,
     "rowIndex": 32
   },
@@ -651,7 +651,7 @@
     "pages": "267",
     "completed": "23-Jul",
     "amazonUrl": "https://www.amazon.com/s?k=Descarte%27s+Error+Antonio+Damasio",
-    "coverUrl": "",
+    "coverUrl": "https://covers.openlibrary.org/b/id/111239-L.jpg",
     "sortDate": 20150723,
     "rowIndex": 40
   },
@@ -859,7 +859,7 @@
     "pages": "527",
     "completed": "24-Dec",
     "amazonUrl": "https://www.amazon.com/s?k=Black+Holes+%26+Time+Warps+Kip+Thorne",
-    "coverUrl": "",
+    "coverUrl": "https://covers.openlibrary.org/b/id/248886-L.jpg",
     "sortDate": 20151224,
     "rowIndex": 53
   },
@@ -923,7 +923,7 @@
     "pages": "279",
     "completed": "7-Feb",
     "amazonUrl": "https://www.amazon.com/s?k=Einstein%27s+God+Krista+Tippett",
-    "coverUrl": "",
+    "coverUrl": "https://covers.openlibrary.org/b/id/12842621-L.jpg",
     "sortDate": 20160207,
     "rowIndex": 57
   },
@@ -1051,7 +1051,7 @@
     "pages": "391",
     "completed": "4-Sep",
     "amazonUrl": "https://www.amazon.com/s?k=Surely+You%27re+Kidding%2C+Mr.+Feynman+Richard+Feynman",
-    "coverUrl": "",
+    "coverUrl": "https://covers.openlibrary.org/b/id/9274698-L.jpg",
     "sortDate": 20160904,
     "rowIndex": 65
   },
@@ -1067,7 +1067,7 @@
     "pages": "308",
     "completed": "9-Sep",
     "amazonUrl": "https://www.amazon.com/s?k=Harry+Potter+and+the+Cursed+Child+J.K.+%26+Others+Rowling",
-    "coverUrl": "",
+    "coverUrl": "https://covers.openlibrary.org/b/id/8763851-L.jpg",
     "sortDate": 20160909,
     "rowIndex": 66
   },
@@ -1147,7 +1147,7 @@
     "pages": "184",
     "completed": "19-Oct",
     "amazonUrl": "https://www.amazon.com/s?k=Charlotte%27s+Web+E.B.+White",
-    "coverUrl": "",
+    "coverUrl": "https://covers.openlibrary.org/b/id/8461797-L.jpg",
     "sortDate": 20161019,
     "rowIndex": 71
   },
@@ -1179,7 +1179,7 @@
     "pages": "114",
     "completed": "1-Nov",
     "amazonUrl": "https://www.amazon.com/s?k=A+Room+of+One%27s+Own+Virginia+Woolf",
-    "coverUrl": "",
+    "coverUrl": "https://covers.openlibrary.org/b/id/6559057-L.jpg",
     "sortDate": 20161101,
     "rowIndex": 73
   },
@@ -1227,7 +1227,7 @@
     "pages": "324",
     "completed": "1-Dec",
     "amazonUrl": "https://www.amazon.com/s?k=Ender%27s+Game+Orson+Scott+Card",
-    "coverUrl": "",
+    "coverUrl": "https://covers.openlibrary.org/b/id/12996033-L.jpg",
     "sortDate": 20161201,
     "rowIndex": 76
   },
@@ -1595,7 +1595,7 @@
     "pages": "397",
     "completed": "22-May",
     "amazonUrl": "https://www.amazon.com/s?k=Schindler%27s+List+Thomas+Keneally",
-    "coverUrl": "",
+    "coverUrl": "https://covers.openlibrary.org/b/id/4274737-L.jpg",
     "sortDate": 20170522,
     "rowIndex": 99
   },
@@ -1627,7 +1627,7 @@
     "pages": "609",
     "completed": "14-Jun",
     "amazonUrl": "https://www.amazon.com/s?k=All+the+King%27s+Men+Robert+Penn+Warren",
-    "coverUrl": "",
+    "coverUrl": "https://covers.openlibrary.org/b/id/112218-L.jpg",
     "sortDate": 20170614,
     "rowIndex": 101
   },
@@ -1723,7 +1723,7 @@
     "pages": "220",
     "completed": "7-Oct",
     "amazonUrl": "https://www.amazon.com/s?k=The+Innovator%27s+Dilemma+Clayton+Christensen",
-    "coverUrl": "",
+    "coverUrl": "https://covers.openlibrary.org/b/id/9274687-L.jpg",
     "sortDate": 20171007,
     "rowIndex": 107
   },
@@ -1755,7 +1755,7 @@
     "pages": "215",
     "completed": "7-Oct",
     "amazonUrl": "https://www.amazon.com/s?k=Getting+to+Plan+B+John+Mullins+%26+Randy+Komisar",
-    "coverUrl": "",
+    "coverUrl": "https://covers.openlibrary.org/b/id/12179552-L.jpg",
     "sortDate": 20171007,
     "rowIndex": 109
   },
@@ -1915,7 +1915,7 @@
     "pages": "310",
     "completed": "2-Dec",
     "amazonUrl": "https://www.amazon.com/s?k=Liar%27s+Poker+Michael+Lewis",
-    "coverUrl": "",
+    "coverUrl": "https://covers.openlibrary.org/b/id/204556-L.jpg",
     "sortDate": 20171202,
     "rowIndex": 119
   },
@@ -2027,7 +2027,7 @@
     "pages": "309",
     "completed": "11-Jan",
     "amazonUrl": "https://www.amazon.com/s?k=Harry+Potter+and+the+Sorcerer%27s+Stone+JK+Rowling",
-    "coverUrl": "",
+    "coverUrl": "https://covers.openlibrary.org/b/id/276518-L.jpg",
     "sortDate": 20180111,
     "rowIndex": 126
   },
@@ -2139,7 +2139,7 @@
     "pages": "211",
     "completed": "21-Mar",
     "amazonUrl": "https://www.amazon.com/s?k=Venture+Deals+Brad+Feld+%26+Jason+Mendelson",
-    "coverUrl": "",
+    "coverUrl": "https://covers.openlibrary.org/b/id/8732100-L.jpg",
     "sortDate": 20180321,
     "rowIndex": 133
   },
@@ -2155,7 +2155,7 @@
     "pages": "284",
     "completed": "27-Mar",
     "amazonUrl": "https://www.amazon.com/s?k=Cryptoassets+Chris+Burniske+%26+Jack+Tatar",
-    "coverUrl": "",
+    "coverUrl": "https://covers.openlibrary.org/b/id/10315586-L.jpg",
     "sortDate": 20180327,
     "rowIndex": 134
   },
@@ -2171,7 +2171,7 @@
     "pages": "353",
     "completed": "14-Apr",
     "amazonUrl": "https://www.amazon.com/s?k=A+Supposedly+Fun+Thing+I%27ll+Never+Do+Again+David+Foster+Wallace",
-    "coverUrl": "",
+    "coverUrl": "https://covers.openlibrary.org/b/id/191074-L.jpg",
     "sortDate": 20180414,
     "rowIndex": 135
   },
@@ -3051,7 +3051,7 @@
     "pages": "188",
     "completed": "8-Sep",
     "amazonUrl": "https://www.amazon.com/s?k=Who+Geoff+Smart+%26+Randy+Street",
-    "coverUrl": "",
+    "coverUrl": "https://covers.openlibrary.org/b/id/10256089-L.jpg",
     "sortDate": 20190908,
     "rowIndex": 190
   },
@@ -3163,7 +3163,7 @@
     "pages": "356",
     "completed": "28-Jan",
     "amazonUrl": "https://www.amazon.com/s?k=Can%27t+Hurt+Me+David+Goggins",
-    "coverUrl": "",
+    "coverUrl": "https://covers.openlibrary.org/b/id/8305903-L.jpg",
     "sortDate": 20200128,
     "rowIndex": 197
   },
@@ -3467,7 +3467,7 @@
     "pages": "98",
     "completed": "24-Aug",
     "amazonUrl": "https://www.amazon.com/s?k=Diversity+in+the+Workplace+Bari+A.+Williams",
-    "coverUrl": "",
+    "coverUrl": "https://covers.openlibrary.org/b/id/10304616-L.jpg",
     "sortDate": 20200824,
     "rowIndex": 216
   },
@@ -3483,7 +3483,7 @@
     "pages": "264",
     "completed": "30-Aug",
     "amazonUrl": "https://www.amazon.com/s?k=Alibaba+Duncan+Clark",
-    "coverUrl": "",
+    "coverUrl": "https://covers.openlibrary.org/b/id/9242590-L.jpg",
     "sortDate": 20200830,
     "rowIndex": 217
   },
@@ -3531,7 +3531,7 @@
     "pages": "238",
     "completed": "21-Oct",
     "amazonUrl": "https://www.amazon.com/s?k=How+to+Be+an+Antiracist+Ibram+X.+Kendi",
-    "coverUrl": "",
+    "coverUrl": "https://covers.openlibrary.org/b/id/12355529-L.jpg",
     "sortDate": 20201021,
     "rowIndex": 220
   },
@@ -3611,7 +3611,7 @@
     "pages": "437",
     "completed": "12-Jan",
     "amazonUrl": "https://www.amazon.com/s?k=The+Game+Neil+Strauss",
-    "coverUrl": "",
+    "coverUrl": "https://covers.openlibrary.org/b/id/8538692-L.jpg",
     "sortDate": 20210112,
     "rowIndex": 225
   },
@@ -3627,7 +3627,7 @@
     "pages": "312",
     "completed": "3-Feb",
     "amazonUrl": "https://www.amazon.com/s?k=Shark%27s+Fin+and+Sichuan+Pepper+Fuchsia+Dunlop",
-    "coverUrl": "",
+    "coverUrl": "https://covers.openlibrary.org/b/id/2412775-L.jpg",
     "sortDate": 20210203,
     "rowIndex": 226
   },
@@ -3675,7 +3675,7 @@
     "pages": "342",
     "completed": "26-Feb",
     "amazonUrl": "https://www.amazon.com/s?k=Why+We+Sleep+Matthew+Walker",
-    "coverUrl": "",
+    "coverUrl": "https://covers.openlibrary.org/b/id/8814155-L.jpg",
     "sortDate": 20210226,
     "rowIndex": 229
   },
@@ -3867,7 +3867,7 @@
     "pages": "165",
     "completed": "22-Jul",
     "amazonUrl": "https://www.amazon.com/s?k=Man%27s+Search+for+Meaning+Viktor+Frankl",
-    "coverUrl": "",
+    "coverUrl": "https://covers.openlibrary.org/b/id/11203708-L.jpg",
     "sortDate": 20210722,
     "rowIndex": 241
   },
@@ -3995,7 +3995,7 @@
     "pages": "112",
     "completed": "13-Jan",
     "amazonUrl": "https://www.amazon.com/s?k=American+Politics+Very+Short+Introductions",
-    "coverUrl": "",
+    "coverUrl": "https://covers.openlibrary.org/b/id/14635036-L.jpg",
     "sortDate": 20220113,
     "rowIndex": 249
   },
@@ -4011,7 +4011,7 @@
     "pages": "128",
     "completed": "16-Jan",
     "amazonUrl": "https://www.amazon.com/s?k=Ideology+Very+Short+Introductions",
-    "coverUrl": "",
+    "coverUrl": "https://covers.openlibrary.org/b/id/117846-L.jpg",
     "sortDate": 20220116,
     "rowIndex": 250
   },
@@ -4027,7 +4027,7 @@
     "pages": "127",
     "completed": "21-Jan",
     "amazonUrl": "https://www.amazon.com/s?k=Neoliberalism+Very+Short+Introductions",
-    "coverUrl": "",
+    "coverUrl": "https://covers.openlibrary.org/b/id/9843683-L.jpg",
     "sortDate": 20220121,
     "rowIndex": 251
   },
@@ -4043,7 +4043,7 @@
     "pages": "143",
     "completed": "26-Jan",
     "amazonUrl": "https://www.amazon.com/s?k=Geopolitics+Very+Short+Introductions",
-    "coverUrl": "",
+    "coverUrl": "https://covers.openlibrary.org/b/id/14634941-L.jpg",
     "sortDate": 20220126,
     "rowIndex": 252
   },
@@ -4075,7 +4075,7 @@
     "pages": "278",
     "completed": "23-Feb",
     "amazonUrl": "https://www.amazon.com/s?k=Why+We%27re+Polarized+Ezra+Klein",
-    "coverUrl": "",
+    "coverUrl": "https://covers.openlibrary.org/b/id/9280635-L.jpg",
     "sortDate": 20220223,
     "rowIndex": 254
   },
@@ -4187,7 +4187,7 @@
     "pages": "861",
     "completed": "15-Jul",
     "amazonUrl": "https://www.amazon.com/s?k=Seveneves+Neal+Stephenson",
-    "coverUrl": "",
+    "coverUrl": "https://covers.openlibrary.org/b/id/9295719-L.jpg",
     "sortDate": 20220715,
     "rowIndex": 261
   },
@@ -4283,7 +4283,7 @@
     "pages": "343",
     "completed": "23-Sep",
     "amazonUrl": "https://www.amazon.com/s?k=The+High+Growth+Handbook+Elad+Gil",
-    "coverUrl": "",
+    "coverUrl": "https://covers.openlibrary.org/b/id/9205954-L.jpg",
     "sortDate": 20220923,
     "rowIndex": 267
   },
@@ -4299,7 +4299,7 @@
     "pages": "721",
     "completed": "14-Oct",
     "amazonUrl": "https://www.amazon.com/s?k=Death%27s+End+Cixin+Liu",
-    "coverUrl": "",
+    "coverUrl": "https://covers.openlibrary.org/b/id/7893958-L.jpg",
     "sortDate": 20221014,
     "rowIndex": 268
   },
@@ -4315,7 +4315,7 @@
     "pages": "277",
     "completed": "17-Oct",
     "amazonUrl": "https://www.amazon.com/s?k=What+Do+You+Care+What+Other+People+Think+Richard++Feynman",
-    "coverUrl": "",
+    "coverUrl": "https://covers.openlibrary.org/b/id/1468422-L.jpg",
     "sortDate": 20221017,
     "rowIndex": 269
   },
@@ -4379,7 +4379,7 @@
     "pages": "346",
     "completed": "21-Dec",
     "amazonUrl": "https://www.amazon.com/s?k=Freedom%27s+Forge+Arthur+Herman",
-    "coverUrl": "",
+    "coverUrl": "https://covers.openlibrary.org/b/id/7253237-L.jpg",
     "sortDate": 20221221,
     "rowIndex": 273
   },
@@ -4411,7 +4411,7 @@
     "pages": "253",
     "completed": "30-Dec",
     "amazonUrl": "https://www.amazon.com/s?k=Them%3A+Why+We+Hate+Each+Other+-+And+How+to+Heal+Ben+Sasse",
-    "coverUrl": "",
+    "coverUrl": "https://covers.openlibrary.org/b/id/9235024-L.jpg",
     "sortDate": 20221230,
     "rowIndex": 275
   },
@@ -4555,7 +4555,7 @@
     "pages": "90",
     "completed": "12-May",
     "amazonUrl": "https://www.amazon.com/s?k=What+is+Life+Schrodinger",
-    "coverUrl": "",
+    "coverUrl": "https://covers.openlibrary.org/b/id/11024786-L.jpg",
     "sortDate": 20230512,
     "rowIndex": 284
   },
@@ -4587,7 +4587,7 @@
     "pages": "298",
     "completed": "17-Jul",
     "amazonUrl": "https://www.amazon.com/s?k=Trust+Me+I%27m+Lying+Ryan+Holiday",
-    "coverUrl": "",
+    "coverUrl": "https://covers.openlibrary.org/b/id/7888907-L.jpg",
     "sortDate": 20230717,
     "rowIndex": 286
   },
@@ -4843,7 +4843,7 @@
     "pages": "245",
     "completed": "21-Jan",
     "amazonUrl": "https://www.amazon.com/s?k=The+Restaurant+at+the+End+of+the+Universe+Douglas+Adams",
-    "coverUrl": "",
+    "coverUrl": "https://covers.openlibrary.org/b/id/12714921-L.jpg",
     "sortDate": 20240121,
     "rowIndex": 302
   },
@@ -4891,7 +4891,7 @@
     "pages": "312",
     "completed": "4-Mar",
     "amazonUrl": "https://www.amazon.com/s?k=Extreme+Ownership+Jocko+Willink+and+Leif+Rabin",
-    "coverUrl": "",
+    "coverUrl": "https://covers.openlibrary.org/b/id/12835042-L.jpg",
     "sortDate": 20240304,
     "rowIndex": 305
   },
@@ -4955,7 +4955,7 @@
     "pages": "351",
     "completed": "13-May",
     "amazonUrl": "https://www.amazon.com/s?k=Poor+Charlie%27s+Almanack+Charlie+Munger",
-    "coverUrl": "",
+    "coverUrl": "https://covers.openlibrary.org/b/id/8337563-L.jpg",
     "sortDate": 20240513,
     "rowIndex": 309
   },
@@ -5131,7 +5131,7 @@
     "pages": "449",
     "completed": "1-Nov",
     "amazonUrl": "https://www.amazon.com/s?k=Holly+Stephen+King",
-    "coverUrl": "",
+    "coverUrl": "https://covers.openlibrary.org/b/id/14655773-L.jpg",
     "sortDate": 20241101,
     "rowIndex": 320
   },
@@ -5227,7 +5227,7 @@
     "pages": "387",
     "completed": "25-Feb",
     "amazonUrl": "https://www.amazon.com/s?k=Structures%2C+or+Why+Things+Don%27t+Fall+Down+J.E+Gordon",
-    "coverUrl": "",
+    "coverUrl": "https://covers.openlibrary.org/b/id/164385-L.jpg",
     "sortDate": 20250225,
     "rowIndex": 326
   },
