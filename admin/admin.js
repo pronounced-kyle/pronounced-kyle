@@ -168,6 +168,7 @@
   function select(book) {
     state.selected = book ? { ...book } : null;
     editorMessage.textContent = "";
+    editorMessage.classList.remove("is-error");
 
     if (!book) {
       editorTitle.textContent = "No selection";
@@ -220,6 +221,7 @@
   async function save() {
     const data = formData();
     editorMessage.textContent = "";
+    editorMessage.classList.remove("is-error");
 
     try {
       if (state.mode === "library" && data.id) {
@@ -242,20 +244,25 @@
         editorMessage.textContent = "Added.";
       }
     } catch (err) {
-      editorMessage.textContent = err.message;
+      console.error("Save failed:", err);
+      editorMessage.classList.add("is-error");
+      editorMessage.textContent = err.message || "Save failed.";
     }
   }
 
   async function del() {
     if (!state.selected?.id) return;
     if (!confirm(`Delete "${state.selected.title}"?`)) return;
+    editorMessage.classList.remove("is-error");
     try {
       await api(`/api/admin/books/${state.selected.id}`, { method: "DELETE" });
       await loadLibrary();
       select(state.libraryBooks[0] || null);
       editorMessage.textContent = "Deleted.";
     } catch (err) {
-      editorMessage.textContent = err.message;
+      console.error("Delete failed:", err);
+      editorMessage.classList.add("is-error");
+      editorMessage.textContent = err.message || "Delete failed.";
     }
   }
 
