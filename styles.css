@@ -506,6 +506,16 @@ a {
   background: linear-gradient(180deg, var(--gold-soft) 0%, var(--oxblood) 100%);
 }
 
+.timeline::after {
+  content: "";
+  position: absolute;
+  top: -7px;
+  left: calc(var(--timeline-axis-center) - 5px);
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 7px solid var(--gold-soft);
+}
+
 .timeline-year {
   margin-bottom: 28px;
 }
