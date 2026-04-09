@@ -162,7 +162,9 @@ async function readBlobState() {
       return null;
     }
 
-    const response = await fetch(blobs[0].url);
+    const response = await fetch(blobs[0].downloadUrl || blobs[0].url, {
+      headers: { Authorization: `Bearer ${process.env.BLOB_READ_WRITE_TOKEN}` }
+    });
     if (!response.ok) {
       return null;
     }
@@ -189,7 +191,7 @@ async function writeBlobState(state) {
     updatedAt: new Date().toISOString()
   });
   await put(STATE_BLOB_PATH, JSON.stringify(normalized, null, 2), {
-    access: "public",
+    access: "private",
     addRandomSuffix: false,
     allowOverwrite: true,
     contentType: "application/json"
