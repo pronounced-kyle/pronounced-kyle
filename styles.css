@@ -616,11 +616,6 @@ code {
   display: none;
 }
 
-:root {
-  --tab-rail-height: 36px; /* fallback; overridden by JS measurement */
-  --tab-rail-top: 12px;
-  --tab-rail-top-with-topbar: 56px;
-}
 
 @media (max-width: 1040px) {
   body {
@@ -716,24 +711,20 @@ code {
     white-space: nowrap;
   }
 
-  /* Tab rail: shift down when topbar is visible, hide on scroll-down via Headroom */
-
   .tab-rail {
-    top: var(--tab-rail-top);
-    transition: top 220ms ease, opacity 220ms ease, transform 220ms ease;
+    display: none;
   }
 
-  body.topbar-visible .tab-rail {
-    top: var(--tab-rail-top-with-topbar);
+  #panel-bookshelf {
+    display: block;
   }
 
-  /* Year bar: flush against bottom of tab rail */
   .year-divider {
-    top: calc(var(--tab-rail-top) + var(--tab-rail-height));
+    top: 0;
   }
 
   body.topbar-visible .year-divider {
-    top: calc(var(--tab-rail-top-with-topbar) + var(--tab-rail-height));
+    top: 52px;
   }
 }
 

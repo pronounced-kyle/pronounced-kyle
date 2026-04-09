@@ -135,18 +135,6 @@
       observer.observe(identity);
     }
 
-    // Hide tab rail on scroll-down, show on scroll-up
-    const tabRail = document.querySelector(".tab-rail");
-    if (tabRail) {
-      // Measure tab rail height and expose as CSS var so year bar can sit flush beneath it
-      const setOffsets = () => {
-        const h = tabRail.getBoundingClientRect().height;
-        document.documentElement.style.setProperty("--tab-rail-height", `${h}px`);
-      };
-      setOffsets();
-      window.addEventListener("resize", setOffsets);
-
-    }
 
     stackedMedia.addEventListener("change", () => {
       if (!stackedMedia.matches) {
