@@ -616,6 +616,12 @@ code {
   display: none;
 }
 
+:root {
+  --tab-rail-height: 36px; /* fallback; overridden by JS measurement */
+  --tab-rail-top: 12px;
+  --tab-rail-top-with-topbar: 56px;
+}
+
 @media (max-width: 1040px) {
   body {
     overflow: auto;
@@ -711,13 +717,14 @@ code {
   }
 
   /* Tab rail: shift down when topbar is visible, hide on scroll-down via Headroom */
+
   .tab-rail {
-    top: 12px;
+    top: var(--tab-rail-top);
     transition: top 220ms ease, opacity 220ms ease, transform 220ms ease;
   }
 
   body.topbar-visible .tab-rail {
-    top: 56px;
+    top: var(--tab-rail-top-with-topbar);
   }
 
   .tab-rail.headroom--unpinned {
@@ -726,13 +733,13 @@ code {
     transform: translateY(-6px);
   }
 
-  /* Year bar: sits below tab rail */
+  /* Year bar: flush against bottom of tab rail */
   .year-divider {
-    top: 60px;
+    top: calc(var(--tab-rail-top) + var(--tab-rail-height));
   }
 
   body.topbar-visible .year-divider {
-    top: 104px;
+    top: calc(var(--tab-rail-top-with-topbar) + var(--tab-rail-height));
   }
 }
 

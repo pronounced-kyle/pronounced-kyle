@@ -137,11 +137,21 @@
 
     // Hide tab rail on scroll-down, show on scroll-up
     const tabRail = document.querySelector(".tab-rail");
-    if (tabRail && window.Headroom) {
-      new window.Headroom(tabRail, {
-        offset: 180,
-        tolerance: { up: 5, down: 0 }
-      }).init();
+    if (tabRail) {
+      // Measure tab rail height and expose as CSS var so year bar can sit flush beneath it
+      const setOffsets = () => {
+        const h = tabRail.getBoundingClientRect().height;
+        document.documentElement.style.setProperty("--tab-rail-height", `${h}px`);
+      };
+      setOffsets();
+      window.addEventListener("resize", setOffsets);
+
+      if (window.Headroom) {
+        new window.Headroom(tabRail, {
+          offset: 180,
+          tolerance: { up: 5, down: 0 }
+        }).init();
+      }
     }
 
     stackedMedia.addEventListener("change", () => {
