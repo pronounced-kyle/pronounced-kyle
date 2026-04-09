@@ -137,7 +137,7 @@
         const collapsed = body.classList.contains("sidebar-collapsed");
         if (!collapsed && y > 120) {
           body.classList.add("sidebar-collapsed");
-        } else if (collapsed && y < 40) {
+        } else if (collapsed && y < 5) {
           body.classList.remove("sidebar-collapsed");
         }
         if (y > lastY && y > 160) {
